@@ -3,3 +3,6 @@
 # Zig build artifacts
 zig-out/
 .zig-cache/
+
+# Node.js / JavaScript / TypeScript
+node_modules
