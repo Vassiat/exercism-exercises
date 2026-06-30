@@ -1,15 +1,10 @@
 export function isPangram(str: string): boolean {
-  const alphabetRange = Array.from({ length: "z".charCodeAt(0) - "a".charCodeAt(0)});
-
-  alphabetRange.map((_, i, arr) => {
-    const alphabetChar = "a".charCodeAt(0) + i;
-
+  return Array.from({ length: "z".charCodeAt(0) - "a".charCodeAt(0)}).map((_, i, arr) => {
     for (const char of str.toLowerCase().split("").map(c => c.charCodeAt(0))) {
-      if (alphabetChar === char) {
+      if ("a".charCodeAt(0) + i === char) {
         arr[i] = true;
       }
     }
-  });
-
-  return alphabetRange.every(inAlphabet => inAlphabet === true);
+    return arr[i];
+  }).every((inAlphabet) => inAlphabet && inAlphabet === true);
 }
